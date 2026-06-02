@@ -31,16 +31,16 @@ cask "paneflow" do
   # These three lines are rewritten on every release by the CI workflow.
   # The placeholders keep the file syntactically valid (so `brew style`
   # passes in CI) and flag that a human-edited version is stale.
-  version "0.3.7"
-  sha256 arm:   "641d4af8f9a58bab84f0ce2403d9bd518df108b3edadc29c95672fb304fa99b9",
-         intel: "641d4af8f9a58bab84f0ce2403d9bd518df108b3edadc29c95672fb304fa99b9"
+  version "0.3.8"
+  sha256 arm:   "26ced27387afc6c0e3816d05ae6f7f9f0c886c79e810a543fc11467755becfa7",
+         intel: "26ced27387afc6c0e3816d05ae6f7f9f0c886c79e810a543fc11467755becfa7"
 
   url "https://github.com/ArthurDEV44/paneflow/releases/download/v#{version}/paneflow-#{version}-#{arch}.dmg",
       verified: "github.com/ArthurDEV44/paneflow/"
 
   name "PaneFlow"
-  desc "Cross-platform terminal multiplexer built on GPUI"
-  homepage "https://github.com/ArthurDEV44/paneflow"
+  desc "Native terminal workspace for parallel coding agents"
+  homepage "https://paneflow.dev"
 
   # `ventura` (macOS 13) is the floor because GPUI's macOS backend targets
   # that era. Same value as `LSMinimumSystemVersion` in assets/Info.plist
