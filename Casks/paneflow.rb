@@ -31,9 +31,9 @@ cask "paneflow" do
   # These three lines are rewritten on every release by the CI workflow.
   # The placeholders keep the file syntactically valid (so `brew style`
   # passes in CI) and flag that a human-edited version is stale.
-  version "0.5.0"
-  sha256 arm:   "1d9799d923317d40260e05926fe3f716088b92de5cce854589c56254d5b22ab0",
-         intel: "1d9799d923317d40260e05926fe3f716088b92de5cce854589c56254d5b22ab0"
+  version "0.5.1"
+  sha256 arm:   "c88bb6f5bc5fd7672d54ab29430777185fe302ce0ff878a8240567e26b1e3c9e",
+         intel: "c88bb6f5bc5fd7672d54ab29430777185fe302ce0ff878a8240567e26b1e3c9e"
 
   url "https://github.com/ArthurDEV44/paneflow/releases/download/v#{version}/paneflow-#{version}-#{arch}.dmg",
       verified: "github.com/ArthurDEV44/paneflow/"
