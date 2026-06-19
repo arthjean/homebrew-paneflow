@@ -1,10 +1,10 @@
-# PaneFlow Homebrew cask — canonical template.
+# PaneFlow Homebrew cask - canonical template.
 #
 # US-017. This file is the SOURCE OF TRUTH that
 # `.github/workflows/update-cask.yml` copies (and version-stamps) into
 # the external tap repo `ArthurDEV44/homebrew-paneflow` on every
 # release. The tap repo's `Casks/paneflow.rb` is a derived artifact; do
-# not hand-edit it — commit changes here instead and let the workflow
+# not hand-edit it - commit changes here instead and let the workflow
 # propagate on the next release.
 #
 # Operator setup (one-time):
@@ -23,7 +23,7 @@ cask "paneflow" do
   # `arch` maps Homebrew's Ruby-level `arch` helper (which already
   # distinguishes Apple Silicon vs Intel at `brew install` time) onto the
   # Rust target-triple tail PaneFlow uses in its .dmg filenames. The same
-  # string is interpolated into `url` below via `#{arch}` — so there is a
+  # string is interpolated into `url` below via `#{arch}` - so there is a
   # single URL template, not two, and any typo is caught at cask-load
   # time by Homebrew's `brew style` linter.
   arch arm: "aarch64-apple-darwin", intel: "x86_64-apple-darwin"
@@ -31,9 +31,9 @@ cask "paneflow" do
   # These three lines are rewritten on every release by the CI workflow.
   # The placeholders keep the file syntactically valid (so `brew style`
   # passes in CI) and flag that a human-edited version is stale.
-  version "0.5.9"
-  sha256 arm:   "2d37b39d47b4f8ba893dd8780b0bb562423e59904e2d6cab08c143fb31247354",
-         intel: "2d37b39d47b4f8ba893dd8780b0bb562423e59904e2d6cab08c143fb31247354"
+  version "0.5.10"
+  sha256 arm:   "d6ef56423df45555ddaeb34b37544c7b2139779f21584e34704909d71a40be11",
+         intel: "d6ef56423df45555ddaeb34b37544c7b2139779f21584e34704909d71a40be11"
 
   url "https://github.com/ArthurDEV44/paneflow/releases/download/v#{version}/paneflow-#{version}-#{arch}.dmg",
       verified: "github.com/ArthurDEV44/paneflow/"
@@ -45,7 +45,7 @@ cask "paneflow" do
   # `ventura` (macOS 13) is the floor because GPUI's macOS backend targets
   # that era. Same value as `LSMinimumSystemVersion` in assets/Info.plist
   # (US-013). Bumping this here without bumping the plist (or vice versa)
-  # causes install-time confusion — keep them synchronised.
+  # causes install-time confusion - keep them synchronised.
   depends_on macos: ">= :ventura"
 
   # Gatekeeper on macOS extracts the bundle from the DMG and installs it;
@@ -57,7 +57,7 @@ cask "paneflow" do
   # PaneFlow writes at runtime:
   #   ~/Library/Application Support/paneflow   → session.json, config.json
   #   ~/Library/Caches/paneflow                → scrollback, update-check cache
-  # We intentionally do NOT zap ~/Library/Preferences/* — those may hold
+  # We intentionally do NOT zap ~/Library/Preferences/* - those may hold
   # Apple-system-managed state (window sizes, traffic-light geometry)
   # that shouldn't be nuked on an uninstall.
   zap trash: [
