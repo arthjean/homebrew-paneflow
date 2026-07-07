@@ -23,8 +23,8 @@ cask "paneflow" do
   # These two lines are rewritten on every release by the CI workflow.
   # The placeholders keep the file syntactically valid (so `brew style`
   # passes in CI) and flag that a human-edited version is stale.
-  version "0.7.8"
-  sha256 "36d87b4292d794359ffcacd0f0914da783a7e5bb7eb97c4666c6bd59965b1a5c"
+  version "0.7.9"
+  sha256 "9e498a20350f6d5a7f66238c0b233c9234ff7822d2189087fb64c83b5095bc23"
 
   url "https://github.com/ArthurDEV44/paneflow/releases/download/v#{version}/paneflow-#{version}-aarch64-apple-darwin.dmg",
       verified: "github.com/ArthurDEV44/paneflow/"
