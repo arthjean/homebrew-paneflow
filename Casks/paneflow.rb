@@ -2,13 +2,13 @@
 #
 # US-017. This file is the SOURCE OF TRUTH that
 # `.github/workflows/update_cask.yml` copies (and version-stamps) into
-# the external tap repo `ArthurDEV44/homebrew-paneflow` on every
+# the external tap repo `arthjean/homebrew-paneflow` on every
 # release. The tap repo's `Casks/paneflow.rb` is a derived artifact; do
 # not hand-edit it - commit changes here instead and let the workflow
 # propagate on the next release.
 #
 # Operator setup (one-time):
-#   1. Create the public repo https://github.com/ArthurDEV44/homebrew-paneflow
+#   1. Create the public repo https://github.com/arthjean/homebrew-paneflow
 #   2. Initialise it with an empty `Casks/` directory (`git init && mkdir
 #      Casks && git commit -m "bootstrap"`).
 #   3. Create an ed25519 SSH deploy key on the tap repo with write access,
@@ -23,11 +23,11 @@ cask "paneflow" do
   # These two lines are rewritten on every release by the CI workflow.
   # The placeholders keep the file syntactically valid (so `brew style`
   # passes in CI) and flag that a human-edited version is stale.
-  version "0.8.0"
-  sha256 "1cb9a7112fd7958e18e351f6e1c7251d7fb62c56c79b431e70fd376e9e013b89"
+  version "0.8.1"
+  sha256 "d1eb5c0c336c89eb1212c9fa338e516ee434da1b60be3671dd32d51fb1df8e5c"
 
-  url "https://github.com/ArthurDEV44/paneflow/releases/download/v#{version}/paneflow-#{version}-aarch64-apple-darwin.dmg",
-      verified: "github.com/ArthurDEV44/paneflow/"
+  url "https://github.com/arthjean/paneflow/releases/download/v#{version}/paneflow-#{version}-aarch64-apple-darwin.dmg",
+      verified: "github.com/arthjean/paneflow/"
 
   name "PaneFlow"
   desc "Native terminal workspace for parallel coding agents"
