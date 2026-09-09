@@ -23,8 +23,8 @@ cask "paneflow" do
   # These two lines are rewritten on every release by the CI workflow.
   # The placeholders keep the file syntactically valid (so `brew style`
   # passes in CI) and flag that a human-edited version is stale.
-  version "0.13.0"
-  sha256 "383273ba5ac0a77e68ee7fcccec8092832d65aac6a591e8a03e92af1a9e11430"
+  version "0.14.0"
+  sha256 "beb0bf692c5af9c1b348afaa6c939ff06f46a2b07764988d1c5992e424c894fa"
 
   url "https://github.com/arthjean/paneflow/releases/download/v#{version}/paneflow-#{version}-aarch64-apple-darwin.dmg",
       verified: "github.com/arthjean/paneflow/"
@@ -47,12 +47,14 @@ cask "paneflow" do
   # `zap trash:` is Homebrew's opt-in deep-clean; `brew uninstall --zap`
   # moves these directories to the user's Trash. The paths match what
   # PaneFlow writes at runtime:
-  #   ~/Library/Application Support/paneflow   → session.json, config.json
-  #   ~/Library/Caches/paneflow                → scrollback, update-check cache
+  #   ~/.paneflow                              → paneflow.json, session.json, worktrees, bin, cache
+  #   ~/Library/Application Support/paneflow   → config written by releases before the ~/.paneflow home
+  #   ~/Library/Caches/paneflow                → caches written by those releases
   # We intentionally do NOT zap ~/Library/Preferences/* - those may hold
   # Apple-system-managed state (window sizes, traffic-light geometry)
   # that shouldn't be nuked on an uninstall.
   zap trash: [
+    "~/.paneflow",
     "~/Library/Application Support/paneflow",
     "~/Library/Caches/paneflow",
   ]
